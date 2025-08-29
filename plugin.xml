@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plugin id="cordova-plugin-dataleon" version="2.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>cordova-plugin-dataleon</name>
+  <description>Cordova plugin exposing Dataleon SDK</description>
+  <keywords>cordova,phonegap,ecosystem:cordova,cordova-android,cordova-ios,android,ios,ionic,dataleon</keywords>
+
+  <!-- JS module -->
+  <js-module src="www/DataleonCordovaPlugin.js" name="DataleonCordovaPlugin">
+    <clobbers target="Dataleon" />
+  </js-module>
+
+  <!-- Android platform -->
+  <platform name="android">
+
+    <!-- AndroidX support -->
+    <dependency id="cordova-plugin-androidx" />
+    <dependency id="cordova-plugin-androidx-adapter" />
+
+    <!-- Source file -->
+    <source-file src="src/android/DataleonCordovaPlugin.java" target-dir="src/com/dataleon/plugin" />
+
+    <!-- Declare feature -->
+    <config-file parent="/*" target="res/xml/config.xml">
+        <feature name="DataleonCordovaPlugin">
+            <param name="android-package" value="org.apache.cordova.csantosm.DataleonCordovaPlugin" />
+        </feature>
+    </config-file>
+
+    <framework src="src/android/build-extras.gradle" custom="true" type="gradleReference" />
+
+    <!-- Permissions -->
+    <config-file target="AndroidManifest.xml" parent="/*">
+        <uses-permission android:name="android.permission.CAMERA" />
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.RECORD_AUDIO" />
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    </config-file>
+    <config-file parent="/*" target="AndroidManifest.xml" />
+
+  </platform>
+
+  <!-- iOS platform -->
+  <platform name="ios">
+
+    <!-- Swift source file -->
+    <source-file src="src/ios/DataleonCordovaPlugin.swift" />
+
+    <!-- Declare feature -->
+    <config-file parent="/*" target="config.xml">
+      <feature name="DataleonCordovaPlugin">
+        <param name="ios-package" value="DataleonCordovaPlugin" />
+      </feature>
+    </config-file>
+
+
+
+    <!-- iOS camera/microphone permissions -->
+    <config-file parent="NSCameraUsageDescription" target="*-Info.plist">
+      <string>Camera access required for Dataleon sessions</string>
+    </config-file>
+    <config-file parent="NSMicrophoneUsageDescription" target="*-Info.plist">
+      <string>Microphone access required for Dataleon sessions</string>
+    </config-file>
+
+    <!-- Optional: hook to support Swift compilation -->
+    <hook type="after_prepare" src="hooks/dataleon-swift-support.js" />
+
+  </platform>
+
+</plugin>
