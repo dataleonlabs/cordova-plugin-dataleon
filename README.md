@@ -35,7 +35,7 @@ You need a valid Dataleon session URL to start the process.
 ```javascript
 document.addEventListener("deviceready", function () {
   // Start the verification session
-  Dataleon.openSession("https://app.dataleon.com/session/123", function (result) {
+  Dataleon.openSession("https://id.dataleon.ai/w/123", function (result) {
     // The callback returns the Dataleon verification result
     console.log("Dataleon result:", result);
   }, function (err) {
