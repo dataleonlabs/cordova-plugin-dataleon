@@ -22,7 +22,7 @@
     <!-- Declare feature -->
     <config-file parent="/*" target="res/xml/config.xml">
         <feature name="DataleonCordovaPlugin">
-            <param name="android-package" value="org.apache.cordova.csantosm.DataleonCordovaPlugin" />
+            <param name="android-package" value="com.dataleoncordovaplugin.cordova.DataleonCordovaPlugin" />
         </feature>
     </config-file>
 

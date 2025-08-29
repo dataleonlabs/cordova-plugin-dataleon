@@ -1,5 +1,5 @@
 {
-  "name": "@dataleon/cordova-sdk",
+  "name": "@dataleon/cordova-plugin-dataleon",
   "version": "1.2.1",
   "description": "Cordova SDK for Dataleon (native WebView with camera & microphone support)",
   "author": "dataleon",
@@ -15,7 +15,7 @@
     "microphone"
   ],
   "cordova": {
-    "id": "cordova-plugin-dataleon-native",
+    "id": "cordova-plugin-dataleon",
     "platforms": [
       "android",
       "ios"
