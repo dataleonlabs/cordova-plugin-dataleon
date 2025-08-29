@@ -1,6 +1,6 @@
 {
   "name": "@dataleon/cordova-sdk",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Cordova SDK for Dataleon (native WebView with camera & microphone support)",
   "author": "dataleon",
   "license": "MIT",
