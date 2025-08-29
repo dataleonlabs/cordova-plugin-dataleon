@@ -13,7 +13,7 @@ Cordova plugin exposing the Dataleon SDK – Smart and scalable identity verific
 Within your Cordova project:
 
 ```bash
-cordova plugin add cordova-plugin-dataleon
+cordova plugin add @dataleon/cordova-plugin-dataleon
 ```
 
 ## Usage
@@ -42,6 +42,9 @@ document.addEventListener("deviceready", function () {
     // Error callback
     console.error("Dataleon error:", err);
   });
+
+  // Close session
+  Dataleon.closeSession()
 });
 ```
 
