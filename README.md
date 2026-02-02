@@ -34,17 +34,20 @@ You need a valid Dataleon session URL to start the process.
 
 ```javascript
 document.addEventListener("deviceready", function () {
+  const sessionUrl = "https://id.dataleon.ai/w/123";
+  const dataleon = new Dataleon(sessionUrl);
   // Start the verification session
-  Dataleon.openSession("https://id.dataleon.ai/w/123", function (result) {
-    // The callback returns the Dataleon verification result
+  dataleon.openSession(function (result) {
     console.log("Dataleon result:", result);
-  }, function (err) {
-    // Error callback
-    console.error("Dataleon error:", err);
-  });
+  },
+    function (err) {
+      // Error callback
+      console.error("Dataleon error:", err);
+    },
+  );
 
   // Close session
-  Dataleon.closeSession()
+  dataleon.closeSession();
 });
 ```
 
